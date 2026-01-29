@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Control</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <div id="login-view">
+            <h1>Управление устройством</h1>
+            <form id="login-form">
+                <label>
+                    <span>URL сервера</span>
+                    <input type="text" id="server-url" placeholder="https://big-brother.pro" value="https://big-brother.pro">
+                </label>
+                <label>
+                    <span>Логин</span>
+                    <input type="text" id="login" required autocomplete="username">
+                </label>
+                <label>
+                    <span>Пароль</span>
+                    <input type="password" id="password" required autocomplete="current-password">
+                </label>
+                <button type="submit">Подключиться</button>
+            </form>
+            <p id="login-error" class="error hidden"></p>
+        </div>
+
+        <div id="panel-view" class="hidden">
+            <header>
+                <span id="status" class="status">—</span>
+                <button type="button" id="logout-btn">Выход</button>
+            </header>
+            <main>
+                <section class="controls">
+                    <button type="button" id="btn-gps">GPS</button>
+                </section>
+                <section class="output">
+                    <div id="gps-area" class="output-area">
+                        <h3>GPS</h3>
+                        <div id="gps-map"></div>
+                        <p id="gps-text" class="coords"></p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script src="main.js"></script>
+</body>
+</html>

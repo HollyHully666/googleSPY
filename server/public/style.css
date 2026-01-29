@@ -1,0 +1,195 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #1a1a1a;
+    background: #f5f5f5;
+}
+
+#app {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.error {
+    color: #c00;
+    margin-top: 8px;
+}
+
+.muted {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Login */
+#login-view h1 {
+    margin: 0 0 24px;
+    font-size: 1.5rem;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 360px;
+}
+
+#login-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#login-form label span {
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+#login-form input {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+#login-form input:focus {
+    outline: none;
+    border-color: #0066cc;
+    box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+}
+
+#login-form button {
+    padding: 12px 20px;
+    background: #0066cc;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#login-form button:hover {
+    background: #0052a3;
+}
+
+#login-form button:disabled {
+    background: #999;
+    cursor: not-allowed;
+}
+
+/* Panel */
+#panel-view header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.status {
+    font-weight: 500;
+}
+
+.status.connecting {
+    color: #f90;
+}
+
+.status.connected {
+    color: #080;
+}
+
+.status.disconnected,
+.status.error {
+    color: #c00;
+}
+
+#logout-btn {
+    padding: 8px 16px;
+    background: transparent;
+    border: 1px solid #999;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+#logout-btn:hover {
+    background: #eee;
+}
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.controls button {
+    padding: 10px 20px;
+    background: #0066cc;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background: #0052a3;
+}
+
+.controls button:disabled {
+    background: #999;
+    cursor: not-allowed;
+}
+
+.output {
+    display: grid;
+    gap: 24px;
+}
+
+.output-area {
+    background: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+}
+
+.output-area h3 {
+    margin: 0 0 12px;
+    font-size: 1.1rem;
+}
+
+#gps-map {
+    height: 280px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.coords {
+    font-family: monospace;
+    font-size: 0.9em;
+    margin: 0;
+}
+
+#camera-img {
+    max-width: 100%;
+    border-radius: 6px;
+    display: block;
+}
+
+#mic-audio {
+    width: 100%;
+    max-width: 400px;
+}
