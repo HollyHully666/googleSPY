@@ -1,0 +1,30 @@
+# Node / server
+node_modules/
+.env
+.env.local
+.env.*
+!.env.example
+*.log
+npm-debug.log*
+
+# Android
+build/
+.gradle/
+local.properties
+*.iml
+.idea/
+*.keystore
+!debug.keystore
+*.jks
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Cursor / editor
+.cursor/

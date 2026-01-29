@@ -1,0 +1,58 @@
+{
+    "project": "Personal Device Remote Control",
+    "purpose": "Личный инструмент для удалённого доступа к собственному Android-устройству (камера, микрофон, экран, GPS) через веб-интерфейс по домену",
+    "components": {
+      "android_app": {
+        "language": "Kotlin",
+        "ui_framework": "Jetpack Compose",
+        "key_libraries": [
+          "CameraX — доступ к камере",
+          "MediaRecorder — запись микрофона",
+          "MediaProjection API — захват экрана",
+          "FusedLocationProviderClient — GPS",
+          "OkHttp WebSocket — клиентское соединение",
+          "Foreground Service — постоянная работа в фоне"
+        ],
+        "connection": "wss:// (secure WebSocket)",
+        "reconnect": "автоматический с задержкой 5–10 секунд",
+        "build_tool": "Android Studio + Gradle"
+      },
+      "backend_server": {
+        "language": "Node.js (рекомендуется v18 или v20 LTS)",
+        "main_libraries": [
+          "express — HTTP-сервер",
+          "socket.io — WebSocket с комнатами и heartbeat",
+          "bcryptjs — хэширование пароля (если хранишь в файле)"
+        ],
+        "hosting": "VPS (DigitalOcean / Hetzner / AWS Lightsail / etc.)",
+        "runtime_manager": "PM2 (для авторестарта и логирования)",
+        "web_server": "Nginx (reverse proxy + HTTPS)",
+        "ssl": "Let's Encrypt (certbot)",
+        "authentication": "простой логин/пароль (в .env или users.json)",
+        "keep_alive": "socket.io heartbeat (ping каждые 25–30 сек)",
+        "port": "3000 (внутренний), 443 (внешний через Nginx)"
+      },
+      "web_interface": {
+        "type": "одностраничное приложение",
+        "technologies": [
+          "HTML5",
+          "CSS3",
+          "Vanilla JavaScript",
+          "socket.io-client (через CDN или npm)"
+        ],
+        "visualization": [
+          "Leaflet.js — отображение GPS на карте",
+          "<video> + MediaSource Extensions — просмотр стрима камеры/экрана",
+          "<audio> — прослушивание микрофона"
+        ],
+        "access": "https://your-domain.com"
+      }
+    },
+    "security_notes": [
+      "HTTPS обязателен (TLS 1.3)",
+      "Аутентификация на уровне socket handshake",
+      "Нет публичного API, только личный логин/пароль",
+      "Ограничение по IP (опционально в Nginx)"
+    ],
+    "dependencies_minimal": true
+  }
